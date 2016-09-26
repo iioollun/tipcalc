@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="XMU-ku-1s5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TipCalculator-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TipCalculatorViewController" customModule="tipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bill:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dM0-vU-P4G">
+                                <frame key="frameInset" minX="16" minY="80" width="28" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="jgh-jY-bqQ">
+                                <frame key="frameInset" minX="16" minY="111" height="30" maxX="16"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="billFieldOnChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="2tc-Ho-aNS"/>
+                                    <action selector="sliderOrFieldOnChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="Qe2-od-x8R"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tip %:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GBt-l8-BG0">
+                                <frame key="frameInset" minX="16" minY="151" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.10000000000000001" maxValue="0.25" id="ai9-XJ-hA8">
+                                <frame key="frameInset" minX="117" minY="146" height="31" maxX="14"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <connections>
+                                    <action selector="sliderOrFieldOnChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="0YX-vv-2Zb"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="swO-WE-WqE">
+                                <frame key="frameInset" minX="16" minY="192" height="40" maxX="16"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.3411764705882353" green="0.85490196078431369" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Split: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gm5-AE-Fuu">
+                                <frame key="frameInset" minX="16" minY="252" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" id="ulg-ds-zCm">
+                                <frame key="frameInset" minX="117" minY="247" height="31" maxX="14"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <connections>
+                                    <action selector="sliderOrFieldOnChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="XaC-7n-645"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$$$" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OUm-Ud-EHP">
+                                <frame key="frameInset" minX="16" minY="293" height="40" maxX="16"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kfW-ak-wlk" appends="YES" id="KjH-Xd-T54"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="TipCalculator" id="dN5-NL-vRO">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="9s6-0D-iqL">
+                            <connections>
+                                <segue destination="waR-lw-9Fz" kind="push" id="tcO-Bn-HoV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="billField" destination="jgh-jY-bqQ" id="tU3-uH-LTq"/>
+                        <outlet property="resultLabel" destination="swO-WE-WqE" id="dI6-3t-4H9"/>
+                        <outlet property="splitLabel" destination="gm5-AE-Fuu" id="gVO-V8-Zbl"/>
+                        <outlet property="splitResultLabel" destination="OUm-Ud-EHP" id="MaV-L0-nm6"/>
+                        <outlet property="splitSlider" destination="ulg-ds-zCm" id="d6C-iz-rDJ"/>
+                        <outlet property="tipLabel" destination="GBt-l8-BG0" id="mFo-M5-5gm"/>
+                        <outlet property="tipSlider" destination="ai9-XJ-hA8" id="uB1-bq-lA6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kfW-ak-wlk">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="eSN-Bv-89p"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="517.5" y="154.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="AeT-is-IgZ">
+            <objects>
+                <viewController id="waR-lw-9Fz" customClass="SettingViewController" customModule="tipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iqk-h3-oPx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip: %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V5Z-Kk-Gad">
+                                <frame key="frameInset" minX="16" minY="95" height="21" maxX="16"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Split: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UF6-U7-Fep">
+                                <frame key="frameInset" minX="16" minY="176" height="21" maxX="16"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.10000000000000001" maxValue="0.25" id="xZj-3j-5an">
+                                <frame key="frameInset" minX="14" minY="126" height="31" maxX="14"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <connections>
+                                    <action selector="defaultSliderOnChange:" destination="waR-lw-9Fz" eventType="valueChanged" id="607-Wc-KM3"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" id="zUH-Ye-oUc">
+                                <frame key="frameInset" minX="14" minY="207" height="31" maxX="14"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <connections>
+                                    <action selector="defaultSliderOnChange:" destination="waR-lw-9Fz" eventType="valueChanged" id="UoX-XN-jDd"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="IdU-3E-zq1">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="uot-HU-2jP">
+                            <connections>
+                                <action selector="SettingOnSave:" destination="waR-lw-9Fz" id="jkw-Bg-tkV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="defaultSplitLabel" destination="UF6-U7-Fep" id="cE7-jo-Liw"/>
+                        <outlet property="defaultSplitSlider" destination="zUH-Ye-oUc" id="Amz-0r-jLF"/>
+                        <outlet property="defaultTipLabel" destination="V5Z-Kk-Gad" id="Bd9-fk-bLl"/>
+                        <outlet property="defaultTipSlider" destination="xZj-3j-5an" id="5S6-JE-OkB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QcY-nS-NQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975.5" y="154.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZBm-LQ-fQ5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XMU-ku-1s5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iFA-tc-ki1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8BO-vq-Nl6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FgK-xx-EH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.5" y="154.5"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
