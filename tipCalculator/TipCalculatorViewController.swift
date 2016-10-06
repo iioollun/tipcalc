@@ -9,12 +9,15 @@
 import UIKit
 
 class TipCalculatorViewController: UIViewController {
+    // format number
+    let fm = NumberFormatter()
 
     // MARK: - IBOutlet
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var tipSlider: UISlider!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var tipResultLabel: UILabel!
     
     @IBOutlet weak var splitLabel: UILabel!
     @IBOutlet weak var splitSlider: UISlider!
@@ -39,6 +42,10 @@ class TipCalculatorViewController: UIViewController {
     
     func innitApp(){
         
+        let currentSymbol = getCurrencySymbol()
+        fm.currencySymbol = currentSymbol
+        fm.numberStyle = .currency
+        
         // check default Settings
         
         let defaultSettings = UserDefaults.standard
@@ -51,12 +58,13 @@ class TipCalculatorViewController: UIViewController {
             // func in SettingViewController
             SettingViewController().updateSettings(defaultTip: 0.2, defaultSplit: 1)
         }
+        
         if checkBillValue != nil {
-            let billValue = defaultSettings.float(forKey: "billValue")
+            let billValue = defaultSettings.string(forKey: "billValue")
             let billTime = defaultSettings.double(forKey: "billTime")
             let currentTime = NSDate().timeIntervalSince1970
             if currentTime - billTime < 600 {
-                billField.text = String(format: "%.2f", billValue)
+                billField.text = billValue
             }
         }
         
@@ -97,11 +105,15 @@ class TipCalculatorViewController: UIViewController {
     }
     
     func updateUI(){
-        let currentSymbol = getCurrencySymbol()
-        resultLabel.text = String(format: "Total: "+currentSymbol+"%.2f Tip: "+currentSymbol+"%.2f", arguments: [tipCalc.totalAmount, tipCalc.tipAmount])
-        splitResultLabel.text = String(format: "Result: "+currentSymbol+"%.2f", arguments: [tipCalc.resultSplit])
+        
+        resultLabel.text = "Total: " + fm.string(from: NSNumber(value: tipCalc.totalAmount))!
+        
+        tipResultLabel.text = "Tip: " + fm.string(from: NSNumber(value: tipCalc.tipAmount))!
+        
+        splitResultLabel.text = "Result: " + fm.string(from: NSNumber(value: tipCalc.resultSplit))!
         
         tipLabel.text! = String(format: "Tip %d%%:", arguments: [Int(tipSlider.value * 100)])
+        
         splitLabel.text! = String(format: "Split: %d", arguments: [Int(splitSlider.value)])
     }
 
